@@ -157,3 +157,82 @@
   INFO [2dc4f659] Running /usr/bin/env echo "Branch master (at ab2b922bb348acdb347d153682309aa9b2d9616f) deployed as release 20180720131814 by david" >> /var/www/sinatra/revisions.log as root@51.15.72.152
  DEBUG [2dc4f659] Command: cd /var/www/sinatra/releases && /usr/bin/env echo "Branch master (at ab2b922bb348acdb347d153682309aa9b2d9616f) deployed as release 20180720131814 by david" >> /var/www/sinatra/revisions.log
   INFO [78033684] Finished in 0.188 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-07-20 15:20:04 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7d801c04] Running /usr/bin/env mkdir -p /tmp as root@51.15.72.152
+ DEBUG [7d801c04] Command: /usr/bin/env mkdir -p /tmp
+  INFO [bfa53e19] Finished in 1.514 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-personalServer-production-david.sh 0.0%
+  INFO Uploading /tmp/git-ssh-personalServer-production-david.sh 100.0%
+  INFO [1c5519cf] Running /usr/bin/env chmod 700 /tmp/git-ssh-personalServer-production-david.sh as root@51.15.72.152
+ DEBUG [1c5519cf] Command: /usr/bin/env chmod 700 /tmp/git-ssh-personalServer-production-david.sh
+  INFO [eb0ee030] Finished in 0.173 seconds with exit status 0 (successful).
+  INFO [4716cca6] Running /usr/bin/env git ls-remote https://github.com/davidrzs/personalServer.git HEAD as root@51.15.72.152
+ DEBUG [4716cca6] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-personalServer-production-david.sh" ; /usr/bin/env git ls-remote https://github.com/davidrzs/personalServer.git HEAD )
+ DEBUG [841b16bc] 	aa1b0a9b07d1791c65b9bf4415fa7e534263f2ce	HEAD
+  INFO [841b16bc] Finished in 0.913 seconds with exit status 0 (successful).
+  INFO [b9f79b16] Running /usr/bin/env mkdir -p /var/www/sinatra/shared /var/www/sinatra/releases as root@51.15.72.152
+ DEBUG [b9f79b16] Command: /usr/bin/env mkdir -p /var/www/sinatra/shared /var/www/sinatra/releases
+  INFO [e97289d7] Finished in 0.190 seconds with exit status 0 (successful).
+ DEBUG [fb9cc3fd] Running [ -f /var/www/sinatra/current/REVISION ] as root@51.15.72.152
+ DEBUG [fb9cc3fd] Command: [ -f /var/www/sinatra/current/REVISION ]
+ DEBUG [5598085a] Finished in 0.192 seconds with exit status 0 (successful).
+ DEBUG [95062fc9] Running /usr/bin/env cat /var/www/sinatra/current/REVISION 2>/dev/null as root@51.15.72.152
+ DEBUG [95062fc9] Command: /usr/bin/env cat /var/www/sinatra/current/REVISION 2>/dev/null
+ DEBUG [4a1f8449] 	ab2b922bb348acdb347d153682309aa9b2d9616f
+ DEBUG [4a1f8449] Finished in 0.191 seconds with exit status 0 (successful).
+ DEBUG [f2f18940] Running [ -f /var/www/sinatra/repo/HEAD ] as root@51.15.72.152
+ DEBUG [f2f18940] Command: [ -f /var/www/sinatra/repo/HEAD ]
+ DEBUG [fb790d8e] Finished in 0.184 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/sinatra/repo
+ DEBUG [9dc9a980] Running if test ! -d /var/www/sinatra/repo; then echo "Directory does not exist '/var/www/sinatra/repo'" 1>&2; false; fi as root@51.15.72.152
+ DEBUG [9dc9a980] Command: if test ! -d /var/www/sinatra/repo; then echo "Directory does not exist '/var/www/sinatra/repo'" 1>&2; false; fi
+ DEBUG [51440a54] Finished in 0.172 seconds with exit status 0 (successful).
+  INFO [969303db] Running /usr/bin/env git remote set-url origin https://github.com/davidrzs/personalServer.git as root@51.15.72.152
+ DEBUG [969303db] Command: cd /var/www/sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-personalServer-production-david.sh" ; /usr/bin/env git remote set-url origin https://github.com/davidrzs/personalServer.git )
+  INFO [45584edf] Finished in 0.179 seconds with exit status 0 (successful).
+  INFO [13f2c3ad] Running /usr/bin/env git remote update --prune as root@51.15.72.152
+ DEBUG [13f2c3ad] Command: cd /var/www/sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-personalServer-production-david.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [f4502d1b] 	Fetching origin
+ DEBUG [f4502d1b] 	From https://github.com/davidrzs/personalServer
+   ab2b922..aa1b0a9  master     -> master
+  INFO [f4502d1b] Finished in 1.333 seconds with exit status 0 (successful).
+ DEBUG [38926900] Running if test ! -d /var/www/sinatra/repo; then echo "Directory does not exist '/var/www/sinatra/repo'" 1>&2; false; fi as root@51.15.72.152
+ DEBUG [38926900] Command: if test ! -d /var/www/sinatra/repo; then echo "Directory does not exist '/var/www/sinatra/repo'" 1>&2; false; fi
+ DEBUG [7284b35b] Finished in 0.188 seconds with exit status 0 (successful).
+  INFO [1d74352b] Running /usr/bin/env mkdir -p /var/www/sinatra/releases/20180720132007 as root@51.15.72.152
+ DEBUG [1d74352b] Command: cd /var/www/sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-personalServer-production-david.sh" ; /usr/bin/env mkdir -p /var/www/sinatra/releases/20180720132007 )
+  INFO [bb276141] Finished in 0.205 seconds with exit status 0 (successful).
+  INFO [5b7c8806] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/sinatra/releases/20180720132007 as root@51.15.72.152
+ DEBUG [5b7c8806] Command: cd /var/www/sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-personalServer-production-david.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/sinatra/releases/20180720132007 )
+  INFO [b70e2a42] Finished in 0.204 seconds with exit status 0 (successful).
+ DEBUG [8c2763dd] Running if test ! -d /var/www/sinatra/repo; then echo "Directory does not exist '/var/www/sinatra/repo'" 1>&2; false; fi as root@51.15.72.152
+ DEBUG [8c2763dd] Command: if test ! -d /var/www/sinatra/repo; then echo "Directory does not exist '/var/www/sinatra/repo'" 1>&2; false; fi
+ DEBUG [21952a28] Finished in 0.188 seconds with exit status 0 (successful).
+ DEBUG [3d6c319d] Running /usr/bin/env git rev-list --max-count=1 master as root@51.15.72.152
+ DEBUG [3d6c319d] Command: cd /var/www/sinatra/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-personalServer-production-david.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [7565c07a] 	aa1b0a9b07d1791c65b9bf4415fa7e534263f2ce
+ DEBUG [7565c07a] Finished in 0.199 seconds with exit status 0 (successful).
+ DEBUG [256e155b] Running if test ! -d /var/www/sinatra/releases/20180720132007; then echo "Directory does not exist '/var/www/sinatra/releases/20180720132007'" 1>&2; false; fi as root@51.15.72.152
+ DEBUG [256e155b] Command: if test ! -d /var/www/sinatra/releases/20180720132007; then echo "Directory does not exist '/var/www/sinatra/releases/20180720132007'" 1>&2; false; fi
+ DEBUG [0f2391cf] Finished in 0.199 seconds with exit status 0 (successful).
+  INFO [7d9bdbc8] Running /usr/bin/env echo "aa1b0a9b07d1791c65b9bf4415fa7e534263f2ce" > REVISION as root@51.15.72.152
+ DEBUG [7d9bdbc8] Command: cd /var/www/sinatra/releases/20180720132007 && /usr/bin/env echo "aa1b0a9b07d1791c65b9bf4415fa7e534263f2ce" > REVISION
+  INFO [e9974adc] Finished in 0.198 seconds with exit status 0 (successful).
+  INFO [900d32cd] Running /usr/bin/env ln -s /var/www/sinatra/releases/20180720132007 /var/www/sinatra/releases/current as root@51.15.72.152
+ DEBUG [900d32cd] Command: /usr/bin/env ln -s /var/www/sinatra/releases/20180720132007 /var/www/sinatra/releases/current
+  INFO [c5f0d5fe] Finished in 0.175 seconds with exit status 0 (successful).
+  INFO [0d3f5dc4] Running /usr/bin/env mv /var/www/sinatra/releases/current /var/www/sinatra as root@51.15.72.152
+ DEBUG [0d3f5dc4] Command: /usr/bin/env mv /var/www/sinatra/releases/current /var/www/sinatra
+  INFO [166aef6a] Finished in 0.179 seconds with exit status 0 (successful).
+ DEBUG [52f610bc] Running /usr/bin/env ls -x /var/www/sinatra/releases as root@51.15.72.152
+ DEBUG [52f610bc] Command: /usr/bin/env ls -x /var/www/sinatra/releases
+ DEBUG [a0f118ca] 	20180720131814	20180720132007
+ DEBUG [a0f118ca] Finished in 0.172 seconds with exit status 0 (successful).
+ DEBUG [cde959ce] Running if test ! -d /var/www/sinatra/releases; then echo "Directory does not exist '/var/www/sinatra/releases'" 1>&2; false; fi as root@51.15.72.152
+ DEBUG [cde959ce] Command: if test ! -d /var/www/sinatra/releases; then echo "Directory does not exist '/var/www/sinatra/releases'" 1>&2; false; fi
+ DEBUG [4c433e95] Finished in 0.172 seconds with exit status 0 (successful).
+  INFO [7f27a902] Running /usr/bin/env echo "Branch master (at aa1b0a9b07d1791c65b9bf4415fa7e534263f2ce) deployed as release 20180720132007 by david" >> /var/www/sinatra/revisions.log as root@51.15.72.152
+ DEBUG [7f27a902] Command: cd /var/www/sinatra/releases && /usr/bin/env echo "Branch master (at aa1b0a9b07d1791c65b9bf4415fa7e534263f2ce) deployed as release 20180720132007 by david" >> /var/www/sinatra/revisions.log
+  INFO [611cea45] Finished in 0.177 seconds with exit status 0 (successful).
