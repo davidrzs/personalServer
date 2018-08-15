@@ -8,3 +8,5 @@ gem 'sinatra', '~> 1.4', '>= 1.4.7'
 gem 'capistrano', '~> 3.4'
 gem "capistrano-bundler"
 gem "capistrano-passenger"
+gem 'mongo'
+gem 'bson_ext'

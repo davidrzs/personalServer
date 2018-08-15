@@ -12,7 +12,7 @@ class App < Sinatra::Base
     db = Mongo::Client.new('mongodb://127.0.0.1:27017/db')
     set :temperature_db, db[:temperature_db]
   end
-  
+
   get "/" do
     "hello world"
   end
